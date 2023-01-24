@@ -14,9 +14,33 @@ Das Skript ist so konzipiert, dass es die API schont, indem es bereits vorhanden
 pip install mariadb requests
 ```
 2. Klonen Sie das Repository oder laden Sie das Skript herunter.
-3. Stellen Sie sicher, dass MariaDB läuft und Sie die erforderlichen Anmeldeinformationen zur Verbindung mit der Datenbank haben.
-4. Konfigurieren Sie die Datenbankverbindung im Skript.
-5. Stellen Sie sicher, dass das Skript die erforderlichen Berechtigungen zum Lesen der auth.log-Datei hat.
+3. Erstellen Sie das Datenbank Schema.
+```sql
+CREATE DATABASE IF NOT EXISTS `ip_mapper`;
+USE `ip_mapper`;
+
+CREATE TABLE IF NOT EXISTS `mapping` (
+  `uuid` varchar(255) NOT NULL DEFAULT '',
+  `ip` varchar(50) DEFAULT NULL,
+  `timeStamp` varchar(255) DEFAULT NULL,
+  `creationTime` varchar(255) DEFAULT NULL,
+  `organisation` varchar(255) DEFAULT NULL,
+  `port` int(11) DEFAULT NULL,
+  `user` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `region` varchar(255) DEFAULT NULL,
+  `region_code` varchar(255) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `country_code` varchar(255) DEFAULT NULL,
+  `country_code_iso3` varchar(255) DEFAULT NULL,
+  `latitude` float DEFAULT NULL,
+  `longitude` float DEFAULT NULL,
+  PRIMARY KEY (`uuid`)
+)
+```
+4. Stellen Sie sicher, dass MariaDB läuft und Sie die erforderlichen Anmeldeinformationen zur Verbindung mit der Datenbank haben.
+5. Konfigurieren Sie die Datenbankverbindung im Skript.
+6. Stellen Sie sicher, dass das Skript die erforderlichen Berechtigungen zum Lesen der auth.log-Datei hat.
 
 ## Grafana Dashboard
 ![image](https://user-images.githubusercontent.com/76694468/214429802-f930666f-9999-4762-bbcc-2da71420c856.png)
