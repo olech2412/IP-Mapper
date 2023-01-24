@@ -41,14 +41,16 @@ cur = conn.cursor()
 
 
 def insert_data(ipAdress, time, port, user, location_data):
+
     try:
         command = "INSERT INTO mapping (uuid, ip, timeStamp, creationTime, organisation, port, user, city, region, region_code, country, country_code, country_code_iso3, latitude, longitude) VALUES ({}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {})".format(
-            uuid.uuid4().hex, ipAdress, time, datetime.datetime.now(), location_data.get("org"), port, str(user),
-            location_data.get("city"),
-            location_data.get("region"), location_data.get("region_code"), location_data.get("country"),
-            location_data.get("country_code"), location_data.get("country_code_iso3"), location_data.get("latitude"),
+            str("'" + uuid.uuid4().hex + "'"), str("'" + ipAdress + "'"), str("'" + time + "'"), str("'" + str(datetime.datetime.now()) + "'"), str("'" + location_data.get("org") + "'"), port, str("'" + user + "'"),
+            str("'" + location_data.get("city") + "'"),
+            str("'" + location_data.get("region") + "'"), str("'" + location_data.get("region_code") + "'"), str("'" + location_data.get("country") + "'"),
+            str("'" + location_data.get("country_code") + "'"), str("'" + location_data.get("country_code_iso3") + "'"), location_data.get("latitude"),
             location_data.get("longitude"))
         cur.execute(command)
+        conn.commit()
     except mariadb.Error as e:
         print("Error: " + str(e))
 
@@ -79,3 +81,4 @@ for line in file1:
 
 # Closing files
 file1.close()
+conn.close()
