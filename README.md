@@ -52,6 +52,7 @@ INSERT INTO `mapping` (`uuid`, `ip`, `timeStamp`, `creationTime`, `organisation`
 
 ## Visualisierung der Daten
 ![image](https://user-images.githubusercontent.com/76694468/214549453-e62ad1e2-bd8d-4531-b4a8-167fa47f45ce.png)
+![Screenshot 2023-01-25 212258](https://user-images.githubusercontent.com/76694468/214683600-5d229b3a-c0ca-43e4-839d-b407b0bf25fb.jpg)
 
 
 ## Verwendung
