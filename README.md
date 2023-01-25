@@ -50,7 +50,7 @@ INSERT INTO `mapping` (`uuid`, `ip`, `timeStamp`, `creationTime`, `organisation`
 6. Konfigurieren Sie die Datenbankverbindung im Skript.
 7. Stellen Sie sicher, dass das Skript die erforderlichen Berechtigungen zum Lesen der auth.log-Datei hat.
 
-## Grafana Dashboard
+## Visualisierung der Daten
 ![image](https://user-images.githubusercontent.com/76694468/214549453-e62ad1e2-bd8d-4531-b4a8-167fa47f45ce.png)
 
 
