@@ -51,7 +51,7 @@ INSERT INTO `mapping` (`uuid`, `ip`, `timeStamp`, `creationTime`, `organisation`
 7. Stellen Sie sicher, dass das Skript die erforderlichen Berechtigungen zum Lesen der auth.log-Datei hat.
 
 ## Grafana Dashboard
-![image](https://user-images.githubusercontent.com/76694468/214429802-f930666f-9999-4762-bbcc-2da71420c856.png)
+![image](https://user-images.githubusercontent.com/76694468/214549453-e62ad1e2-bd8d-4531-b4a8-167fa47f45ce.png)
 
 
 ## Verwendung
